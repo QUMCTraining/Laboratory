@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LaboratoryProject.Data;
 using LaboratoryProject.Models;
+using System.Data;
+using ClosedXML.Excel;
 
 namespace LaboratoryProject.Controllers
 {
@@ -20,11 +22,97 @@ namespace LaboratoryProject.Controllers
         }
 
         // GET: Requests
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchSelected, string searchString)
         {
-              return _context.Request != null ? 
-                          View(await _context.Request.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Request'  is null.");
+            if (_context.Request == null)
+            {
+                return NotFound("Request Is Null");
+            }
+            var searchelement = from c in _context.Request select c;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                if (searchSelected == "College")
+                {
+                    searchelement = searchelement.Where(s => s.College.Contains(searchString));
+                }
+                else if (searchString == "Status")
+                {
+                    searchelement = searchelement.Where(s => s.StudentsStatus.Contains(searchString));
+                }
+            }
+            return View(await searchelement.ToListAsync());
+            //return _context.Request != null ? 
+            //              View(await _context.Request.ToListAsync()) :
+            //              Problem("Entity set 'ApplicationDbContext.Request'  is null.");
+        }
+        [HttpGet]
+        public async Task<FileResult> ExportInExcel()
+        {
+            var Requests = await _context.Request.ToListAsync();
+            var FileName = "Requests.xlsx";
+            return GenerateExcel(FileName, Requests);
+        }
+        private FileResult GenerateExcel(string FileName, IEnumerable<Request> requests)
+        {
+            DataTable dataTable = new DataTable("Requests");
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("Id"),
+                new DataColumn("NationalOrResidenceId"),
+                new DataColumn("UniversityNumber"),
+                new DataColumn("StudentsStatus"),
+                new DataColumn("College"),
+                new DataColumn("FirstNameEnglish"),
+                new DataColumn("FatherNameEnglish"),
+                new DataColumn("GrandFatherNameEnglish"),
+                new DataColumn("FamilyNameEnglish"),
+                new DataColumn("FirstNameArabic"),
+                new DataColumn("FatherNameArabic"),
+                new DataColumn("GrandFatherNameArabic"),
+                new DataColumn("FamilyNameArabic"),
+                new DataColumn("Email"),
+                new DataColumn("PhoneNo"),
+                new DataColumn("BirthDate"),
+                new DataColumn("MedicalFileNo"),
+                new DataColumn("TestDate"),
+                new DataColumn("NationalOrResidenceIdFile"),
+                new DataColumn("CopyOfStudentId")
+            });
+            foreach (var Request in requests)
+            {
+                dataTable.Rows.Add(
+                    Request.Id,
+                    Request.NationalOrResidenceId,
+                    Request.UniversityNumber,
+                    Request.StudentsStatus,
+                    Request.College,
+                    Request.FirstNameEnglish,
+                    Request.FatherNameEnglish,
+                    Request.GrandFatherNameEnglish,
+                    Request.FamilyNameEnglish,
+                    Request.FirstNameArabic,
+                    Request.FatherNameArabic,
+                    Request.GrandFatherNameArabic,
+                    Request.FamilyNameArabic,
+                    Request.Email,
+                    Request.PhoneNo,
+                    Request.BirthDate,
+                    Request.MedicalFileNo,
+                    Request.TestDate,
+                    Request.NationalOrResidenceIdFile,
+                    Request.CopyOfStudentId
+                    );
+            }
+            using (XLWorkbook workbook = new XLWorkbook())
+            {
+                workbook.Worksheets.Add(dataTable);
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);  
+                    return File(stream.ToArray(),
+                         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", FileName);
+                }
+            }
         }
 
         // GET: Requests/Details/5
