@@ -1,4 +1,7 @@
-﻿@model LaboratoryProject.Models.RequestVM
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject LaboratoryProject.Resources.LocService SL
+
+@model LaboratoryProject.Models.RequestVM
 @{
 }
 @if (ViewBag.ErrorMessage is not null)
@@ -14,7 +17,7 @@
     <div class="row">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group col">
-            <label asp-for="Request.NationalOrResidenceId" class="control-label"></label>
+            <label asp-for="Request.NationalOrResidenceId" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
             <input asp-for="Request.NationalOrResidenceId" class="form-control" />
             <span asp-validation-for="Request.NationalOrResidenceId" class="text-danger"></span>
         </div>
