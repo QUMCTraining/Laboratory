@@ -24,6 +24,7 @@ namespace LaboratoryProject.Controllers
         // GET: Requests
         public async Task<IActionResult> Index(string searchSelected, string searchString)
         {
+            // Filter data (search from college and student status database)
             if (_context.Request == null)
             {
                 return NotFound("Request Is Null");
@@ -41,10 +42,118 @@ namespace LaboratoryProject.Controllers
                 }
             }
             return View(await searchelement.ToListAsync());
-            //return _context.Request != null ? 
-            //              View(await _context.Request.ToListAsync()) :
-            //              Problem("Entity set 'ApplicationDbContext.Request'  is null.");
         }
+        // GET: Requests/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _context.Request == null)
+            {
+                return NotFound();
+            }
+
+            var request = await _context.Request
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (request == null)
+            {
+                return NotFound();
+            }
+
+            return View(request);
+        }
+
+        // GET: Requests/Create
+        public IActionResult Create()
+        {
+            RequestVM requestVM = new RequestVM();
+            var colleges = _context.College.ToList();
+            requestVM.CollagesSelectList = new SelectList(colleges, "Name", "Name");
+
+            var managment = _context.Mangement.Where(x => x.Name == "limitationDays").FirstOrDefault();
+            if (managment is null)
+            {
+                ViewBag.ErrorMessage = "You need to set the limit in mangment page";
+                return View();
+            }
+            var limitDays = managment.Value;
+
+            var dateTo = DateTime.Now.AddDays(30);
+
+            List<DateTime> avilableDates = new List<DateTime>();
+            for (var date = DateTime.Now; date <= dateTo; date = date.AddDays(1))
+            {
+                if (date.DayOfWeek.ToString() == "Friday" || date.DayOfWeek.ToString() == "Saturday")
+                {
+                    continue;
+                }
+                var requestCount = _context.Request.Where(x => x.TestDate.Date == date.Date).Count();
+                if (requestCount >= limitDays)
+                {
+                    continue;
+                }
+                avilableDates.Add(date);
+            }
+            requestVM.AvilableDates = avilableDates;
+            return View(requestVM);
+
+        }
+
+        // POST: Requests/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,NationalOrResidenceId,UniversityNumber,StudentsStatus,College,FirstNameEnglish,FatherNameEnglish,GrandFatherNameEnglish,FamilyNameEnglish,FirstNameArabic,FatherNameArabic,GrandFatherNameArabic,FamilyNameArabic,Email,PhoneNo,BirthDate,MedicalFileNo,TestDate")] Request request, IFormFile NationalOrResidenceIdFile, IFormFile CopyOfStudentId)
+        {
+            RequestVM requestVM = new RequestVM();
+            requestVM.Request = request;
+            var colleges = _context.College.ToList();
+            requestVM.CollagesSelectList = new SelectList(colleges, "Name", "Name");
+            var management = _context.Mangement.Where(x => x.Name == "limitationDays").FirstOrDefault();
+            if (management is null)
+            {
+                ViewBag.ErrorMessage = "You need to set limit in management page";
+                return View(requestVM);
+            }
+
+            var limitDays = management.Value;
+            var requestsCount = _context.Request.Where(X => X.TestDate == request.TestDate).Count();
+            if (requestsCount >= limitDays)
+            {
+                ViewBag.ErrorMessage = "Sorry,The limit of Requests for this Day is Reached";
+                return View(requestVM);
+            }
+
+            // Uploaded files by use GUID
+
+            var nationalOrResidenceIdFile = Guid.NewGuid().ToString() + ".jpg";
+            var copyOfStudentId = Guid.NewGuid().ToString() + ".jpg";
+
+            var residenceIdFullPath = System.IO.Path.Combine(
+                System.IO.Directory.GetCurrentDirectory(), "wwwroot", "UploadedFiles", nationalOrResidenceIdFile);
+            var studentIdFullPath = System.IO.Path.Combine(
+                System.IO.Directory.GetCurrentDirectory(), "wwwroot", "UploadedFiles", copyOfStudentId);
+
+            using (var stream = new System.IO.FileStream(residenceIdFullPath, System.IO.FileMode.Create))
+            {
+                await NationalOrResidenceIdFile.CopyToAsync(stream);
+            }
+            using (var stream = new System.IO.FileStream(studentIdFullPath, System.IO.FileMode.Create))
+            {
+                await CopyOfStudentId.CopyToAsync(stream);
+            }
+            request.NationalOrResidenceIdFile = nationalOrResidenceIdFile;
+            request.CopyOfStudentId = copyOfStudentId;
+
+            if (ModelState.IsValid)
+            {
+                _context.Add(request);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Message");
+            }
+            return View(requestVM);
+        }
+
+        // Export Data to Excel 
         [HttpGet]
         public async Task<FileResult> ExportInExcel()
         {
@@ -113,173 +222,6 @@ namespace LaboratoryProject.Controllers
                          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", FileName);
                 }
             }
-        }
-
-        // GET: Requests/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Request == null)
-            {
-                return NotFound();
-            }
-
-            var request = await _context.Request
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (request == null)
-            {
-                return NotFound();
-            }
-
-            return View(request);
-        }
-
-        // GET: Requests/Create
-        public IActionResult Create()
-        {
-            //var managment = _context.Mangement.Where(x => x.Name == "limitationDays").FirstOrDefault();
-            //if (managment is null)
-            //{
-            //    ViewBag.ErrorMessage = "You need to set the limit in mangment page";
-            //    return View();
-            //}
-            //var limitDays = managment.Value;
-
-            //var dateTo = DateTime.Now.AddDays(30);
-
-            //List<DateTime> avilableDates = new List<DateTime>();
-            //for (var date = DateTime.Now; date <= dateTo; date = date.AddDays(1))
-            //{
-            //    if (date.DayOfWeek.ToString() == "Friday" || date.DayOfWeek.ToString() == "Saturday")
-            //    {
-            //        continue;
-            //    }
-            //    var requestCount = _context.Request.Where(x => x.TestDate.Date == date.Date).Count();
-            //    if (requestCount >= limitDays)
-            //    {
-            //        continue;
-            //    }
-            //    avilableDates.Add(date);
-            //}
-            return View();
-
-        }
-
-        // POST: Requests/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NationalOrResidenceId,UniversityNumber,StudentsStatus,College,FirstNameEnglish,FatherNameEnglish,GrandFatherNameEnglish,FamilyNameEnglish,FirstNameArabic,FatherNameArabic,GrandFatherNameArabic,FamilyNameArabic,Email,PhoneNo,BirthDate,MedicalFileNo,TestDate,NationalOrResidenceIdFile,CopyOfStudentId")] Request request)
-        {
-            //var management = _context.Mangement.Where(x => x.Name == "limitationDays").FirstOrDefault();
-            //if (management is null)
-            //{
-            //    ViewBag.ErrorMessage = "You need to set limit in management page";
-            //    return View(vmStudentandCollages);
-            //}
-            //var limitDays = management.Value;
-            //var requestsCount = _context.Request.Where(X => X.TestDate == request.TestDate).Count();
-            //if (requestsCount >= limitDays)
-            //{
-            //    ViewBag.ErrorMessage = "Sorry,The limit of Requests for this Day is Reached";
-            //    return View(vmStudentandCollages);
-            //}
-
-            //if (ModelState.IsValid)
-            //{
-            //    _context.Add(request);
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
-            //}
-            return View();
-        }
-
-        // GET: Requests/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.Request == null)
-            {
-                return NotFound();
-            }
-
-            var request = await _context.Request.FindAsync(id);
-            if (request == null)
-            {
-                return NotFound();
-            }
-            return View(request);
-        }
-
-        // POST: Requests/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NationalOrResidenceId,UniversityNumber,StudentsStatus,College,FirstNameEnglish,FatherNameEnglish,GrandFatherNameEnglish,FamilyNameEnglish,FirstNameArabic,FatherNameArabic,GrandFatherNameArabic,FamilyNameArabic,Email,PhoneNo,BirthDate,MedicalFileNo,TestDate,NationalOrResidenceIdFile,CopyOfStudentId")] Request request)
-        {
-            if (id != request.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(request);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!RequestExists(request.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(request);
-        }
-
-        // GET: Requests/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Request == null)
-            {
-                return NotFound();
-            }
-
-            var request = await _context.Request
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (request == null)
-            {
-                return NotFound();
-            }
-
-            return View(request);
-        }
-
-        // POST: Requests/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Request == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Request'  is null.");
-            }
-            var request = await _context.Request.FindAsync(id);
-            if (request != null)
-            {
-                _context.Request.Remove(request);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
         }
 
         private bool RequestExists(int id)

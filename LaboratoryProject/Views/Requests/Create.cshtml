@@ -8,7 +8,7 @@
     </div>
 }
 <div>
-    <h5 class="rounded text-center text-white p-2 bg-info" data-i18n="textTitle1">Students and Interns Screening Application Form</h5>
+    <h5 class="rounded text-center text-white p-2 bg-info">Students and Interns Screening Application Form</h5>
 </div>
 <form asp-action="Create" enctype="multipart/form-data">
     <div class="row">
@@ -124,7 +124,7 @@
     </div>
     <div class="row">
         <div class="form-group col">
-            @*<select class="form-control" asp-for="Request.TestDate">
+            <select class="form-control" asp-for="Request.TestDate">
                 @if (Model.AvilableDates is not null)
                 {
                     var avilableDates = (List<DateTime>)Model.AvilableDates;
@@ -133,7 +133,7 @@
                         <option>@avilableDate.ToLongDateString()</option>
                     }
                 }
-            </select>*@
+            </select>
         </div>
     </div>
     <div class="row mt-3">
