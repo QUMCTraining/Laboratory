@@ -68,7 +68,7 @@ namespace LaboratoryProject.Controllers
             var colleges = _context.College.ToList();
             requestVM.CollagesSelectList = new SelectList(colleges, "Name", "Name");
 
-            var managment = _context.Mangement.Where(x => x.Name == "limitationDays").FirstOrDefault();
+            var managment = _context.Management.Where(x => x.Name == "limitationDays").FirstOrDefault();
             if (managment is null)
             {
                 ViewBag.ErrorMessage = "You need to set the limit in mangment page";
@@ -108,7 +108,7 @@ namespace LaboratoryProject.Controllers
             requestVM.Request = request;
             var colleges = _context.College.ToList();
             requestVM.CollagesSelectList = new SelectList(colleges, "Name", "Name");
-            var management = _context.Mangement.Where(x => x.Name == "limitationDays").FirstOrDefault();
+            var management = _context.Management.Where(x => x.Name == "limitationDays").FirstOrDefault();
             if (management is null)
             {
                 ViewBag.ErrorMessage = "You need to set limit in management page";

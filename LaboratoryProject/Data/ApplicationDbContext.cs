@@ -11,8 +11,10 @@ namespace LaboratoryProject.Data
         {
         }
         public DbSet<LaboratoryProject.Models.Request>? Request { get; set; }
-        public DbSet<LaboratoryProject.Models.Managment>? Mangement { get; set; }
+       
         public DbSet<LaboratoryProject.Models.College>? College { get; set; }
+       
+        public DbSet<LaboratoryProject.Models.Management>? Management { get; set; }
 
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace LaboratoryProject.Models
 {
-    public class Managment
+    public class Management
     {
         public int Id { get; set; }
 
