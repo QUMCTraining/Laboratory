@@ -27,6 +27,13 @@
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
+                    <form asp-action="index" asp-controller="Home">
+                        <select class="form-select" onchange="this.form.submit();" name="selectedLanguage">
+                            <option>Language</option>
+                            <option value="en">English</option>
+                            <option value="ar">Arabic</option>
+                        </select>
+                    </form>
                 </div>
             </div>
         </nav>

@@ -3,6 +3,8 @@
 
 @model LaboratoryProject.Models.RequestVM
 @{
+    var isEnlang = SL.Loc("NationalOrResidenceId") == "National Or Residence Id";
+    var direction = isEnlang ? "ltr" : "rtl";
 }
 @if (ViewBag.ErrorMessage is not null)
 {
@@ -13,7 +15,7 @@
 <div>
     <h5 class="rounded text-center text-white p-2 bg-info">Students and Interns Screening Application Form</h5>
 </div>
-<form asp-action="Create" enctype="multipart/form-data">
+<form asp-action="Create" enctype="multipart/form-data" dir="@direction">
     <div class="row">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group col">
