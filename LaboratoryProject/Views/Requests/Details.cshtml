@@ -1,4 +1,7 @@
-﻿@model LaboratoryProject.Models.Request
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject LaboratoryProject.Resources.LocService SL
+
+@model LaboratoryProject.Models.Request
 
 @{
     ViewData["Title"] = "Details";
@@ -14,25 +17,25 @@
     <div class="row">
         <div class="col">
             <div class="form-group">
-                <label asp-for="NationalOrResidenceId" class="control-label"></label>
+                <label asp-for="NationalOrResidenceId" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="NationalOrResidenceId" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="UniversityNumber" class="control-label"></label>
+                <label asp-for="UniversityNumber" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="UniversityNumber" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="StudentsStatus" class="control-label">Student Status</label>
+                <label asp-for="StudentsStatus" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <option class="form-control" readonly>@Html.DisplayFor(model => model.StudentsStatus)</option>
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="College" class="control-label">College</label>
+                <label asp-for="College" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <option class="form-control" readonly>@Html.DisplayFor(model => model.College)</option>
             </div>
         </div>
@@ -42,25 +45,25 @@
     <div class="row">
         <div class="col">
             <div class="form-group">
-                <label asp-for="FirstNameEnglish" class="control-label"></label>
+                <label asp-for="FirstNameEnglish" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="FirstNameEnglish" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="FatherNameEnglish" class="control-label"></label>
+                <label asp-for="FatherNameEnglish" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="FatherNameEnglish" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="GrandFatherNameEnglish" class="control-label"></label>
+                <label asp-for="GrandFatherNameEnglish" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="GrandFatherNameEnglish" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="FamilyNameEnglish" class="control-label"></label>
+                <label asp-for="FamilyNameEnglish" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="FamilyNameEnglish" class="form-control" readonly />
             </div>
         </div>
@@ -69,25 +72,25 @@
     <div class="row">
         <div class="col">
             <div class="form-group">
-                <label asp-for="FirstNameArabic" class="control-label"></label>
+                <label asp-for="FirstNameArabic" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="FirstNameArabic" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="FatherNameArabic" class="control-label"></label>
+                <label asp-for="FatherNameArabic" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="FatherNameArabic" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="GrandFatherNameArabic" class="control-label"></label>
+                <label asp-for="GrandFatherNameArabic" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="GrandFatherNameArabic" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="FamilyNameArabic" class="control-label"></label>
+                <label asp-for="FamilyNameArabic" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="FamilyNameArabic" class="form-control" readonly />
             </div>
         </div>
@@ -96,25 +99,25 @@
     <div class="row">
         <div class="col">
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="Email" type="email" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="PhoneNo" class="control-label"></label>
+                <label asp-for="PhoneNo" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="PhoneNo" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="BirthDate" class="control-label"></label>
+                <label asp-for="BirthDate" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="BirthDate" type="date" class="form-control" readonly />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="MedicalFileNo" class="control-label"></label>
+                <label asp-for="MedicalFileNo" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <input asp-for="MedicalFileNo" class="form-control" readonly />
             </div>
         </div>
@@ -123,27 +126,22 @@
     <div class="row">
         <div class="col">
             <div class="form-group">
-                <label asp-for="NationalOrResidenceIdFile" class="control-label">National/Residence Id</label>
+                <label asp-for="NationalOrResidenceIdFile" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <img src="~/UploadedFiles/@Model.NationalOrResidenceIdFile" width="400" />
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label asp-for="CopyOfStudentId" class="control-label">Student Id</label>
+                <label asp-for="CopyOfStudentId" class="control-label">@SL.Loc("NationalOrResidenceId")</label>
                 <img src="~/UploadedFiles/@Model.CopyOfStudentId" width="400" />
             </div>
         </div>
-        <b class="text-danger">
-            * In case the Student Id is not available, please attach a copy of Qassim
-            University student file.
-        </b>
-
-
+        <li class="text-danger fw-bold" data-i18n="textQUStudentFile">In case the student id is not available, please attach a copy of Qassim University student file</li>
     </div>
     <hr />
     <!--6th row-->
     <div class="row">
-        <b class="text-info">Kindly select a sutable date and time for needed test.</b>
+        <h5 class="text-info" data-i18n="tesxtSelectDate">Kindly select a suitable date and time for the needed tests.</h5>
         <div class="col-3">
             <div class="form-group">
                 <option class="form-control" readonly> @Html.DisplayFor(model => model.TestDate)</option>
@@ -153,7 +151,7 @@
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input mx-1" type="checkbox" name="confirmation" checked>
-                I declare that the above-mentioned data is accurate and filled out by me pesonally.
+                @SL.Loc("I declare that the above-mentioned data is accurate and filled out by me personally")
             </label>
         </div>
     </div>

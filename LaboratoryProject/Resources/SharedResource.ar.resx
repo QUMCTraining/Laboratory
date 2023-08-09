@@ -117,13 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BirthDate" xml:space="preserve">
+    <value>تاريخ الميلاد</value>
+  </data>
+  <data name="Blood resulted within 14 working days, kindly bring the approved university/institution tests' form to be filled out" xml:space="preserve">
+    <value>خروج نتيجة تحليل الدم خلال 14 يوم عمل ، يرجى إحضار استمارة الاختبارات الجامعية / المؤسسة المعتمدة لتعبئته</value>
+  </data>
   <data name="College" xml:space="preserve">
     <value>الكلية</value>
+  </data>
+  <data name="CopyOfStudentId" xml:space="preserve">
+    <value>صورة من بطاقة الطالب</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="FamilyNameArabic" xml:space="preserve">
+    <value>إسم العائلة | عربي</value>
+  </data>
+  <data name="FamilyNameEnglish" xml:space="preserve">
+    <value>إسم العائلة | انجليزي</value>
+  </data>
+  <data name="FatherNameArabic" xml:space="preserve">
+    <value>إسم الأب | عربي</value>
+  </data>
+  <data name="FatherNameEnglish" xml:space="preserve">
+    <value>إسم الأب | انجليزي</value>
+  </data>
+  <data name="FirstNameArabic" xml:space="preserve">
+    <value>الأسم الأول | عربي</value>
+  </data>
+  <data name="FirstNameEnglish" xml:space="preserve">
+    <value>الأسم الأول | انجليزي</value>
+  </data>
+  <data name="GrandFatherNameArabic" xml:space="preserve">
+    <value>إسم الجد | عربي</value>
+  </data>
+  <data name="GrandFatherNameEnglish" xml:space="preserve">
+    <value>إسم الجد | انجليزي</value>
+  </data>
+  <data name="I declare that the above-mentioned data is accurate and filled out by me personally" xml:space="preserve">
+    <value>أقر بأن البيانات المذكورة أعلاه صحيحة وتم ملؤها شخصيًا</value>
+  </data>
+  <data name="Important Notes" xml:space="preserve">
+    <value>ملاحظات هامة</value>
+  </data>
+  <data name="In case the student id is not available, please attach a copy of Qassim University student file" xml:space="preserve">
+    <value>في حالة بطاقة الطالب غير موجودة, الرجاء إدراج نسخة من ملف طالب جامعة القصيم.</value>
+  </data>
+  <data name="Kindly select a suitable date and time for the needed tests" xml:space="preserve">
+    <value>الرجاء إختيار تاريخ الموعد المناسب</value>
+  </data>
+  <data name="Lab is open from 8:00 AM till 1:00 PM" xml:space="preserve">
+    <value>المختبر مفتوح من الساعة 8:00 صباحًا حتى الساعة 1:00 مساءً</value>
+  </data>
+  <data name="MedicalFileNo" xml:space="preserve">
+    <value>رقم الملف الطبي</value>
   </data>
   <data name="NationalOrResidenceId" xml:space="preserve">
     <value>رقم الهوية \ الإقامة</value>
   </data>
+  <data name="NationalOrResidenceIdFile" xml:space="preserve">
+    <value>صورة من بطاقة الهوية / الإقامة</value>
+  </data>
+  <data name="PhoneNo" xml:space="preserve">
+    <value>رقم الجوال</value>
+  </data>
   <data name="qumc" xml:space="preserve">
     <value>المدينة الطبية</value>
+  </data>
+  <data name="Students that did not submit a request through the portal will not be accepted" xml:space="preserve">
+    <value>لن يتم قبول الطلاب الذين لم يقدموا طلبًا عبر البوابة</value>
+  </data>
+  <data name="StudentsStatus" xml:space="preserve">
+    <value>حالة الطالب</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>تقديم</value>
+  </data>
+  <data name="TestDate" xml:space="preserve">
+    <value>يوم الموعد</value>
+  </data>
+  <data name="UniversityNumber" xml:space="preserve">
+    <value>الرقم الجامعي</value>
   </data>
 </root>

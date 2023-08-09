@@ -117,13 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Birth Date</value>
+  </data>
+  <data name="Blood resulted within 14 working days, kindly bring the approved university/institution tests' form to be filled out" xml:space="preserve">
+    <value>Blood resulted within 14 working days, kindly bring the approved university/institution tests' form to be filled out</value>
+  </data>
   <data name="College" xml:space="preserve">
     <value>College</value>
+  </data>
+  <data name="CopyOfStudentId" xml:space="preserve">
+    <value>Copy Of StudentId</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FamilyNameArabic" xml:space="preserve">
+    <value>Family Name |Arabic</value>
+  </data>
+  <data name="FamilyNameEnglish" xml:space="preserve">
+    <value>Family Name | English</value>
+  </data>
+  <data name="FatherNameArabic" xml:space="preserve">
+    <value>Father Name |Arabic</value>
+  </data>
+  <data name="FatherNameEnglish" xml:space="preserve">
+    <value>Father Name | English</value>
+  </data>
+  <data name="FirstNameArabic" xml:space="preserve">
+    <value>First Name | Arabic</value>
+  </data>
+  <data name="FirstNameEnglish" xml:space="preserve">
+    <value>First Name | English</value>
+  </data>
+  <data name="GrandFatherNameArabic" xml:space="preserve">
+    <value>GrandFather Name |Arabic</value>
+  </data>
+  <data name="GrandFatherNameEnglish" xml:space="preserve">
+    <value>GrandFather Name | English</value>
+  </data>
+  <data name="I declare that the above-mentioned data is accurate and filled out by me personally" xml:space="preserve">
+    <value>I declare that the above-mentioned data is accurate and filled out by me personally</value>
+  </data>
+  <data name="Important Notes" xml:space="preserve">
+    <value>Important Notes</value>
+  </data>
+  <data name="In case the student id is not available, please attach a copy of Qassim University student file" xml:space="preserve">
+    <value>In case the student id is not available, please attach a copy of Qassim University student file</value>
+  </data>
+  <data name="Kindly select a suitable date and time for the needed tests" xml:space="preserve">
+    <value>Kindly select a suitable date and time for the needed tests</value>
+  </data>
+  <data name="Lab is open from 8:00 AM till 1:00 PM" xml:space="preserve">
+    <value>Lab is open from 8:00 AM till 1:00 PM</value>
+  </data>
+  <data name="MedicalFileNo" xml:space="preserve">
+    <value>Medical File Number</value>
   </data>
   <data name="NationalOrResidenceId" xml:space="preserve">
     <value>National Or Residence Id</value>
   </data>
+  <data name="NationalOrResidenceIdFile" xml:space="preserve">
+    <value>National / Residence Id File</value>
+  </data>
+  <data name="PhoneNo" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
   <data name="qumc" xml:space="preserve">
     <value>QUMC</value>
+  </data>
+  <data name="Students that did not submit a request through the portal will not be accepted" xml:space="preserve">
+    <value>Students that did not submit a request through the portal will not be accepted</value>
+  </data>
+  <data name="StudentsStatus" xml:space="preserve">
+    <value>Students Status</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>submit</value>
+  </data>
+  <data name="TestDate" xml:space="preserve">
+    <value>Test Date</value>
+  </data>
+  <data name="UniversityNumber" xml:space="preserve">
+    <value>UniversityNumber</value>
   </data>
 </root>

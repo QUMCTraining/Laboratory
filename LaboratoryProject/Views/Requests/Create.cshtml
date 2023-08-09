@@ -22,12 +22,12 @@
             <span asp-validation-for="Request.NationalOrResidenceId" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.UniversityNumber" class="control-label"></label>
+            <label asp-for="Request.UniversityNumber" class="control-label">@SL.Loc("UniversityNumber")</label>
             <input asp-for="Request.UniversityNumber" class="form-control" />
             <span asp-validation-for="Request.UniversityNumber" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.StudentsStatus" class="control-label"></label>
+            <label asp-for="Request.StudentsStatus" class="control-label">@SL.Loc("StudentsStatus")</label>
             <select asp-for="Request.StudentsStatus" class="form-select">
                 <option>select</option>
                 <option value="NewStudent">New Student</option>
@@ -36,7 +36,7 @@
             <span asp-validation-for="Request.StudentsStatus" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.College" class="control-label"></label>
+            <label asp-for="Request.College" class="control-label">@SL.Loc("College")</label>
             <select asp-for="Request.College" asp-items="@Model.CollagesSelectList" class="form-select">
                 <option></option>
             </select>
@@ -46,91 +46,96 @@
     </div>
     <div class="row">
         <div class="form-group col">
-            <label asp-for="Request.FirstNameEnglish" class="control-label"></label>
+            <label asp-for="Request.FirstNameEnglish" class="control-label">@SL.Loc("FirstNameEnglish")</label>
             <input asp-for="Request.FirstNameEnglish" class="form-control" />
             <span asp-validation-for="Request.FirstNameEnglish" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.FatherNameEnglish" class="control-label"></label>
+            <label asp-for="Request.FatherNameEnglish" class="control-label">@SL.Loc("FatherNameEnglish")</label>
             <input asp-for="Request.FatherNameEnglish" class="form-control" />
             <span asp-validation-for="Request.FatherNameEnglish" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.GrandFatherNameEnglish" class="control-label"></label>
+            <label asp-for="Request.GrandFatherNameEnglish" class="control-label">@SL.Loc("GrandFatherNameEnglish")</label>
             <input asp-for="Request.GrandFatherNameEnglish" class="form-control" />
             <span asp-validation-for="Request.GrandFatherNameEnglish" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.FamilyNameEnglish" class="control-label"></label>
+            <label asp-for="Request.FamilyNameEnglish" class="control-label">@SL.Loc("FamilyNameEnglish")</label>
             <input asp-for="Request.FamilyNameEnglish" class="form-control" />
             <span asp-validation-for="Request.FamilyNameEnglish" class="text-danger"></span>
         </div>
     </div>
     <div class="row">
         <div class="form-group col">
-            <label asp-for="Request.FirstNameArabic" class="control-label"></label>
+            <label asp-for="Request.FirstNameArabic" class="control-label">@SL.Loc("FirstNameArabic")</label>
             <input asp-for="Request.FirstNameArabic" class="form-control" />
             <span asp-validation-for="Request.FirstNameArabic" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.FatherNameArabic" class="control-label"></label>
+            <label asp-for="Request.FatherNameArabic" class="control-label">@SL.Loc("FatherNameArabic")</label>
             <input asp-for="Request.FatherNameArabic" class="form-control" />
             <span asp-validation-for="Request.FatherNameArabic" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.GrandFatherNameArabic" class="control-label"></label>
+            <label asp-for="Request.GrandFatherNameArabic" class="control-label">@SL.Loc("GrandFatherNameArabic")</label>
             <input asp-for="Request.GrandFatherNameArabic" class="form-control" />
             <span asp-validation-for="Request.GrandFatherNameArabic" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.FamilyNameArabic" class="control-label"></label>
+            <label asp-for="Request.FamilyNameArabic" class="control-label">@SL.Loc("FamilyNameArabic")</label>
             <input asp-for="Request.FamilyNameArabic" class="form-control" />
             <span asp-validation-for="Request.FamilyNameArabic" class="text-danger"></span>
         </div>
     </div>
     <div class="row">
         <div class="form-group col">
-            <label asp-for="Request.Email" class="control-label"></label>
+            <label asp-for="Request.Email" class="control-label">@SL.Loc("Email")</label>
             <input asp-for="Request.Email" class="form-control" />
             <span asp-validation-for="Request.Email" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.PhoneNo" class="control-label"></label>
+            <label asp-for="Request.PhoneNo" class="control-label">@SL.Loc("PhoneNo")</label>
             <input asp-for="Request.PhoneNo" class="form-control" placeholder="05xxxxxxxx" />
             <span asp-validation-for="Request.PhoneNo" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.BirthDate" class="control-label"></label>
+            <label asp-for="Request.BirthDate" class="control-label">@SL.Loc("BirthDate")</label>
             <input asp-for="Request.BirthDate" class="form-control" />
             <span asp-validation-for="Request.BirthDate" class="text-danger"></span>
         </div>
         <div class="form-group col">
-            <label asp-for="Request.MedicalFileNo" class="control-label"></label>
+            <label asp-for="Request.MedicalFileNo" class="control-label">@SL.Loc("MedicalFileNo")</label>
             <input asp-for="Request.MedicalFileNo" class="form-control" />
             <span asp-validation-for="Request.MedicalFileNo" class="text-danger"></span>
         </div>
         <div class="row">
             <div class="form-group col">
-                <label asp-for="Request.NationalOrResidenceIdFile" class="control-label"></label>
+                <label asp-for="Request.NationalOrResidenceIdFile" class="control-label">@SL.Loc("NationalOrResidenceIdFile")</label>
                 <input type="file" name="NationalOrResidenceIdFile" class="form-control" />
                 <span asp-validation-for="Request.NationalOrResidenceIdFile" class="text-danger"></span>
             </div>
             <div class="form-group col">
-                <label asp-for="Request.CopyOfStudentId" class="control-label"></label>
+                <label asp-for="Request.CopyOfStudentId" class="control-label">@SL.Loc("CopyOfStudentId")</label>
                 <input type="file" name="CopyOfStudentId" class="form-control" />
                 <span asp-validation-for="Request.CopyOfStudentId" class="text-danger"></span>
             </div>
         </div>
     </div>
     <div class="row mt-3">
-        <li class="text-danger fw-bold" data-i18n="textQUStudentFile">In case the student id is not available, please attach a copy of Qassim University student file</li>
+        <li class="text-danger fw-bold" data-i18n="textQUStudentFile">
+            @SL.Loc("In case the student id is not available, please attach a copy of Qassim University student file")
+        </li>
     </div>
     <hr />
     <div class="row">
-        <h5 class="text-info" data-i18n="tesxtSelectDate">Kindly select a suitable date and time for the needed tests.</h5>
+        <h5 class="text-info" data-i18n="tesxtSelectDate">
+            @SL.Loc("Kindly select a suitable date and time for the needed tests.")
+        </h5>
     </div>
     <div class="row">
         <div class="form-group col">
+            <label asp-for="Request.TestDate" class="control-label">@SL.Loc("TestDate")</label>
             <select class="form-control" asp-for="Request.TestDate">
                 @if (Model.AvilableDates is not null)
                 {
@@ -146,27 +151,29 @@
     <div class="row mt-3">
         <div class="col form-check">
             <input class="form-check-input" type="checkbox" id="check1DeclareData" name="check1DeclareData" value="12345" required>
-            <label class="form-check-label">I declare that the above-mentioned data is accurate and filled out by me personally</label>
+            <label class="form-check-label" >
+                @SL.Loc("I declare that the above-mentioned data is accurate and filled out by me personally")
+            </label>
         </div>
     </div>
     <hr />
     <div class="row">
         <div class="col">
-            <h5 class="text-danger fw-bold">Important Notes</h5>
+            <h5 class="text-danger fw-bold" @SL.Loc("Important Notes")>Important Notes</h5>
         </div>
     </div>
     <div class="row">
         <div class="col mt-3">
             <ul class="text-info">
-                <li>Lab is open from 8:00 AM till 1:00 PM</li>
-                <li>Students that did not submit a request through the portal will not be accepted</li>
-                <li>Blood resulted within 14 working days, kindly bring the approved university/institution tests' form to be filled out.</li>
+                <li>@SL.Loc("Lab is open from 8:00 AM till 1:00 PM") </li>
+                <li>@SL.Loc("Students that did not submit a request through the portal will not be accepted")</li>
+                <li>@SL.Loc("Blood resulted within 14 working days, kindly bring the approved university/institution tests' form to be filled out")</li>
             </ul>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
-            <input type="submit" value="submit" class="btn btn-primary" />
+            <input type="submit" value="submit" class="btn btn-primary" @SL.Loc("submit") />
         </div>
     </div>
 </form>
