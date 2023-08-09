@@ -186,6 +186,12 @@
   <data name="qumc" xml:space="preserve">
     <value>QUMC</value>
   </data>
+  <data name="Student Details" xml:space="preserve">
+    <value>Student Details</value>
+  </data>
+  <data name="Students and Interns Screening Application FormStudents and Interns Screening Application Form" xml:space="preserve">
+    <value>Students and Interns Screening Application Form</value>
+  </data>
   <data name="Students that did not submit a request through the portal will not be accepted" xml:space="preserve">
     <value>Students that did not submit a request through the portal will not be accepted</value>
   </data>

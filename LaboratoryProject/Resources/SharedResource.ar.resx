@@ -186,6 +186,12 @@
   <data name="qumc" xml:space="preserve">
     <value>المدينة الطبية</value>
   </data>
+  <data name="Student Details" xml:space="preserve">
+    <value>تفاصيل الطالب</value>
+  </data>
+  <data name="Students and Interns Screening Application Form" xml:space="preserve">
+    <value>استمارة طلب فحص الطلاب والمتدربين</value>
+  </data>
   <data name="Students that did not submit a request through the portal will not be accepted" xml:space="preserve">
     <value>لن يتم قبول الطلاب الذين لم يقدموا طلبًا عبر البوابة</value>
   </data>
