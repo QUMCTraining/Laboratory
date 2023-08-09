@@ -10,5 +10,8 @@ namespace LaboratoryProject.Models
 
         public SelectList CollagesSelectList { get; set; }
 
+        public string ErrorMessage { get; set; }
+
+
     }
 }

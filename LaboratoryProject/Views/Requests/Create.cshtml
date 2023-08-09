@@ -6,10 +6,10 @@
     var isEnlang = SL.Loc("NationalOrResidenceId") == "National Or Residence Id";
     var direction = isEnlang ? "ltr" : "rtl";
 }
-@if (ViewBag.ErrorMessage is not null)
+@if (Model.ErrorMessage is not null)
 {
     <div class="text-danger h1 w-50">
-        @ViewBag.ErrorMessage
+        @Model.ErrorMessage
     </div>
 }
 <div>

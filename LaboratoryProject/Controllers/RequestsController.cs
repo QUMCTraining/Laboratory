@@ -97,7 +97,7 @@ namespace LaboratoryProject.Controllers
             var avilableDates = GetAvilableDates();
             if (avilableDates is null)
             {
-               ViewBag.ErrorMessage = "You need to set the limit in mangment page";
+                requestVM.ErrorMessage = "You need to set the limit in mangment page";
             }
             else
             {
@@ -122,7 +122,7 @@ namespace LaboratoryProject.Controllers
             var management = _context.Management.Where(x => x.Name == "limitationDays").FirstOrDefault();
             if (management is null)
             {
-                ViewBag.ErrorMessage = "You need to set limit in management page";
+                requestVM.ErrorMessage = "You need to set the limit in mangment page";
                 return View(requestVM);
             }
 
@@ -136,7 +136,8 @@ namespace LaboratoryProject.Controllers
             var requestsCount = _context.Request.Where(X => X.TestDate == request.TestDate).Count();
             if (requestsCount >= limitDays)
             {
-                ViewBag.ErrorMessage = "Sorry,The limit of Requests for this Day is Reached";
+
+                requestVM.ErrorMessage = "Sorry,The limit of Requests for this Day is Reached";
                 return View(requestVM);
             }
 
