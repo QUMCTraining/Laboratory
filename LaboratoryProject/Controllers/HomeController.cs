@@ -1,4 +1,5 @@
 ﻿using LaboratoryProject.Models;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -13,8 +14,24 @@ namespace LaboratoryProject.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string lang = "en")
         {
+            if (lang == "en")
+            {
+                Response.Cookies.Append(
+                    CookieRequestCultureProvider.DefaultCookieName,
+                    CookieRequestCultureProvider.MakeCookieValue(new RequestCulture("en-US")),
+                    new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+                    );
+            }
+            else
+            {
+                Response.Cookies.Append(
+                    CookieRequestCultureProvider.DefaultCookieName,
+                    CookieRequestCultureProvider.MakeCookieValue(new RequestCulture("ar-SA")),
+                    new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+                );
+            }
             return View();
         }
 

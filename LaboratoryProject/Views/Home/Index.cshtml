@@ -1,9 +1,12 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject LaboratoryProject.Resources.LocService SL
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">@SL.Loc("qumc")</h1>
     <p>
         <a asp-action="Create" asp-controller="Requests" class="btn btn-info text-white">Create New</a>
     </p>
@@ -13,6 +16,10 @@
     <p>
         <a asp-action="Edit" asp-controller="Managements" class="btn btn-info text-white">System Config</a>
     </p>
+
+    <a asp-action="index" asp-route-lang="en" class="btn btn-primary">en</a>
+    <a asp-action="index" asp-route-lang="ar" class="btn btn-primary">ar</a>
+
  
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
