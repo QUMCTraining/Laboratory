@@ -34,7 +34,9 @@
         </div>
         <div class="form-group col">
             <label asp-for="Request.College" class="control-label"></label>
-            <select asp-for="Request.College" asp-items="Model.CollagesSelectList" class="form-select"></select>
+            <select asp-for="Request.College" asp-items="@Model.CollagesSelectList" class="form-select">
+                <option></option>
+            </select>
 
             <span asp-validation-for="Request.College" class="text-danger"></span>
         </div>

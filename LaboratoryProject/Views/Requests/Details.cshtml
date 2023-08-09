@@ -3,169 +3,163 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h1>Details</h1>
-
-
-    <h4>Request</h4>
-    <hr />
-    <div class="row bg-info my-3 mx-2 rounded ">
-        <h5 class=" text-light text-center">Student Details </h5>
-    </div>
+<div class="row bg-info my-3 mx-2 rounded ">
+    <h5 class=" text-light text-center">Student Details </h5>
+</div>
 
 
-    <form asp-action="Details">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <!--first row-->
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label asp-for="NationalOrResidenceId" class="control-label"></label>
-                    <input asp-for="NationalOrResidenceId" class="form-control" readonly />
-                </div>
+<form asp-action="Details">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <!--first row-->
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="NationalOrResidenceId" class="control-label"></label>
+                <input asp-for="NationalOrResidenceId" class="form-control" readonly />
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <label asp-for="UniversityNumber" class="control-label"></label>
-                    <input asp-for="UniversityNumber" class="form-control" readonly />
-                </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="UniversityNumber" class="control-label"></label>
+                <input asp-for="UniversityNumber" class="form-control" readonly />
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="StudentsStatus" class="control-label">Student Status</label>
                 <option class="form-control" readonly>@Html.DisplayFor(model => model.StudentsStatus)</option>
-                </div>
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="College" class="control-label">College</label>
                 <option class="form-control" readonly>@Html.DisplayFor(model => model.College)</option>
-                </div>
             </div>
         </div>
+    </div>
 
-        <!--second row-->
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
+    <!--second row-->
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="FirstNameEnglish" class="control-label"></label>
                 <input asp-for="FirstNameEnglish" class="form-control" readonly />
-                </div>
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="FatherNameEnglish" class="control-label"></label>
                 <input asp-for="FatherNameEnglish" class="form-control" readonly />
-                </div>
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="GrandFatherNameEnglish" class="control-label"></label>
                 <input asp-for="GrandFatherNameEnglish" class="form-control" readonly />
-                </div>
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="FamilyNameEnglish" class="control-label"></label>
                 <input asp-for="FamilyNameEnglish" class="form-control" readonly />
-                </div>
             </div>
         </div>
-        <!--3ed row-->
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
+    </div>
+    <!--3ed row-->
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="FirstNameArabic" class="control-label"></label>
                 <input asp-for="FirstNameArabic" class="form-control" readonly />
-                </div>
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="FatherNameArabic" class="control-label"></label>
                 <input asp-for="FatherNameArabic" class="form-control" readonly />
-                </div>
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="GrandFatherNameArabic" class="control-label"></label>
                 <input asp-for="GrandFatherNameArabic" class="form-control" readonly />
-                </div>
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="FamilyNameArabic" class="control-label"></label>
                 <input asp-for="FamilyNameArabic" class="form-control" readonly />
-                </div>
             </div>
         </div>
-        <!--4th row-->
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" type="email" class="form-control" readonly />
-                </div>
+    </div>
+    <!--4th row-->
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" type="email" class="form-control" readonly />
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="PhoneNo" class="control-label"></label>
                 <input asp-for="PhoneNo" class="form-control" readonly />
-                </div>
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <label asp-for="BirthDate" class="control-label"></label>
-                    <input asp-for="BirthDate" type="date" class="form-control" readonly />
-                </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" type="date" class="form-control" readonly />
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="MedicalFileNo" class="control-label"></label>
                 <input asp-for="MedicalFileNo" class="form-control" readonly />
-                </div>
             </div>
         </div>
-        <!--5th row-->
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
+    </div>
+    <!--5th row-->
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="NationalOrResidenceIdFile" class="control-label">National/Residence Id</label>
                 <img src="~/UploadedFiles/@Model.NationalOrResidenceIdFile" width="400" />
-                </div>
             </div>
-            <div class="col">
-                <div class="form-group">
+        </div>
+        <div class="col">
+            <div class="form-group">
                 <label asp-for="CopyOfStudentId" class="control-label">Student Id</label>
                 <img src="~/UploadedFiles/@Model.CopyOfStudentId" width="400" />
-                </div>
-            </div>
-            <b class="text-danger">
-                * In case the Student Id is not available, please attach a copy of Qassim
-                University student file.
-            </b>
-
-
-        </div>
-        <hr />
-        <!--6th row-->
-        <div class="row">
-            <b class="text-info">Kindly select a sutable date and time for needed test.</b>
-            <div class="col-3">
-                <div class="form-group">
-                    <option class="form-control" readonly> @Html.DisplayFor(model => model.TestDate)</option>
-                </div>
-            </div>
-
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input mx-1" type="checkbox" name="confirmation" checked>
-                    I declare that the above-mentioned data is accurate and filled out by me pesonally.
-                </label>
             </div>
         </div>
-        <div>
-           <a asp-action="Index">Back to List</a>
+        <b class="text-danger">
+            * In case the Student Id is not available, please attach a copy of Qassim
+            University student file.
+        </b>
+
+
+    </div>
+    <hr />
+    <!--6th row-->
+    <div class="row">
+        <b class="text-info">Kindly select a sutable date and time for needed test.</b>
+        <div class="col-3">
+            <div class="form-group">
+                <option class="form-control" readonly> @Html.DisplayFor(model => model.TestDate)</option>
+            </div>
         </div>
-    </form>
-   
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input mx-1" type="checkbox" name="confirmation" checked>
+                I declare that the above-mentioned data is accurate and filled out by me pesonally.
+            </label>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</form>
+
 
