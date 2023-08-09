@@ -171,6 +171,9 @@
   <data name="MedicalFileNo" xml:space="preserve">
     <value>رقم الملف الطبي</value>
   </data>
+  <data name="MessageSuccessfully" xml:space="preserve">
+    <value>تم إرسال رسالتك بنجاح. سوف نتصل بك قريبا!</value>
+  </data>
   <data name="NationalOrResidenceId" xml:space="preserve">
     <value>رقم الهوية \ الإقامة</value>
   </data>
@@ -203,6 +206,9 @@
   </data>
   <data name="TextKindlySelectSuitableDate" xml:space="preserve">
     <value>الرجاء إختيار تاريخ الموعد المناسب</value>
+  </data>
+  <data name="ThanksToSubmit" xml:space="preserve">
+    <value>شكرًا لك!</value>
   </data>
   <data name="UniversityNumber" xml:space="preserve">
     <value>الرقم الجامعي</value>

@@ -171,6 +171,9 @@
   <data name="MedicalFileNo" xml:space="preserve">
     <value>Medical File Number</value>
   </data>
+  <data name="MessageSuccessfully" xml:space="preserve">
+    <value>Your message has been successfully sent. We will contact you very soon!</value>
+  </data>
   <data name="NationalOrResidenceId" xml:space="preserve">
     <value>National Or Residence Id</value>
   </data>
@@ -203,6 +206,9 @@
   </data>
   <data name="TextKindlySelectSuitableDate" xml:space="preserve">
     <value>Kindly select a suitable date and time for the needed tests</value>
+  </data>
+  <data name="ThanksToSubmit" xml:space="preserve">
+    <value>Thank you Student!</value>
   </data>
   <data name="UniversityNumber" xml:space="preserve">
     <value>UniversityNumber</value>
