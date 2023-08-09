@@ -113,7 +113,11 @@ namespace LaboratoryProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NationalOrResidenceId,UniversityNumber,StudentsStatus,College,FirstNameEnglish,FatherNameEnglish,GrandFatherNameEnglish,FamilyNameEnglish,FirstNameArabic,FatherNameArabic,GrandFatherNameArabic,FamilyNameArabic,Email,PhoneNo,BirthDate,MedicalFileNo,TestDate")] Request request, IFormFile NationalOrResidenceIdFile, IFormFile CopyOfStudentId)
+        public async Task<IActionResult> Create(
+            [Bind("Id,NationalOrResidenceId,UniversityNumber,StudentsStatus,College,FirstNameEnglish," +
+            "FatherNameEnglish,GrandFatherNameEnglish,FamilyNameEnglish,FirstNameArabic,FatherNameArabic," +
+            "GrandFatherNameArabic,FamilyNameArabic,Email,PhoneNo,BirthDate,MedicalFileNo,TestDate")] Request request,
+            IFormFile nationalOrResidenceIdFile, IFormFile copyOfStudentId)
         {
             RequestVM requestVM = new RequestVM();
             requestVM.Request = request;
@@ -143,24 +147,24 @@ namespace LaboratoryProject.Controllers
 
             // Uploaded files by use GUID
 
-            var nationalOrResidenceIdFile = Guid.NewGuid().ToString() + ".jpg";
-            var copyOfStudentId = Guid.NewGuid().ToString() + ".jpg";
+            var nationalOrResidenceIdFileName = Guid.NewGuid().ToString() + ".jpg";
+            var copyOfStudentIdName = Guid.NewGuid().ToString() + ".jpg";
 
             var residenceIdFullPath = System.IO.Path.Combine(
-                System.IO.Directory.GetCurrentDirectory(), "wwwroot", "UploadedFiles", nationalOrResidenceIdFile);
+                System.IO.Directory.GetCurrentDirectory(), "wwwroot", "UploadedFiles", nationalOrResidenceIdFileName);
             var studentIdFullPath = System.IO.Path.Combine(
-                System.IO.Directory.GetCurrentDirectory(), "wwwroot", "UploadedFiles", copyOfStudentId);
+                System.IO.Directory.GetCurrentDirectory(), "wwwroot", "UploadedFiles", copyOfStudentIdName);
 
             using (var stream = new System.IO.FileStream(residenceIdFullPath, System.IO.FileMode.Create))
             {
-                await NationalOrResidenceIdFile.CopyToAsync(stream);
+                await nationalOrResidenceIdFile.CopyToAsync(stream);
             }
             using (var stream = new System.IO.FileStream(studentIdFullPath, System.IO.FileMode.Create))
             {
-                await CopyOfStudentId.CopyToAsync(stream);
+                await copyOfStudentId.CopyToAsync(stream);
             }
-            request.NationalOrResidenceIdFile = nationalOrResidenceIdFile;
-            request.CopyOfStudentId = copyOfStudentId;
+            request.NationalOrResidenceIdFile = nationalOrResidenceIdFileName;
+            request.CopyOfStudentId = copyOfStudentIdName;
 
             if (ModelState.IsValid)
             {
