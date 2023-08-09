@@ -136,7 +136,32 @@ namespace LaboratoryProject.Controllers
         // GET: Requests/Create
         public IActionResult Create()
         {
+            //var managment = _context.Mangement.Where(x => x.Name == "limitationDays").FirstOrDefault();
+            //if (managment is null)
+            //{
+            //    ViewBag.ErrorMessage = "You need to set the limit in mangment page";
+            //    return View();
+            //}
+            //var limitDays = managment.Value;
+
+            //var dateTo = DateTime.Now.AddDays(30);
+
+            //List<DateTime> avilableDates = new List<DateTime>();
+            //for (var date = DateTime.Now; date <= dateTo; date = date.AddDays(1))
+            //{
+            //    if (date.DayOfWeek.ToString() == "Friday" || date.DayOfWeek.ToString() == "Saturday")
+            //    {
+            //        continue;
+            //    }
+            //    var requestCount = _context.Request.Where(x => x.TestDate.Date == date.Date).Count();
+            //    if (requestCount >= limitDays)
+            //    {
+            //        continue;
+            //    }
+            //    avilableDates.Add(date);
+            //}
             return View();
+
         }
 
         // POST: Requests/Create
@@ -146,13 +171,27 @@ namespace LaboratoryProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,NationalOrResidenceId,UniversityNumber,StudentsStatus,College,FirstNameEnglish,FatherNameEnglish,GrandFatherNameEnglish,FamilyNameEnglish,FirstNameArabic,FatherNameArabic,GrandFatherNameArabic,FamilyNameArabic,Email,PhoneNo,BirthDate,MedicalFileNo,TestDate,NationalOrResidenceIdFile,CopyOfStudentId")] Request request)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(request);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(request);
+            //var management = _context.Mangement.Where(x => x.Name == "limitationDays").FirstOrDefault();
+            //if (management is null)
+            //{
+            //    ViewBag.ErrorMessage = "You need to set limit in management page";
+            //    return View(vmStudentandCollages);
+            //}
+            //var limitDays = management.Value;
+            //var requestsCount = _context.Request.Where(X => X.TestDate == request.TestDate).Count();
+            //if (requestsCount >= limitDays)
+            //{
+            //    ViewBag.ErrorMessage = "Sorry,The limit of Requests for this Day is Reached";
+            //    return View(vmStudentandCollages);
+            //}
+
+            //if (ModelState.IsValid)
+            //{
+            //    _context.Add(request);
+            //    await _context.SaveChangesAsync();
+            //    return RedirectToAction(nameof(Index));
+            //}
+            return View();
         }
 
         // GET: Requests/Edit/5
