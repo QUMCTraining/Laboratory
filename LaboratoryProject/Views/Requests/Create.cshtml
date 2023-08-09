@@ -34,6 +34,8 @@
         </div>
         <div class="form-group col">
             <label asp-for="Request.College" class="control-label"></label>
+            <select asp-for="Request.College" asp-items="Model.CollagesSelectList" class="form-select"></select>
+
             <span asp-validation-for="Request.College" class="text-danger"></span>
         </div>
     </div>
@@ -105,12 +107,12 @@
         <div class="row">
             <div class="form-group col">
                 <label asp-for="Request.NationalOrResidenceIdFile" class="control-label"></label>
-                <input type="file" name="ResidenceIdName" class="form-control" />
+                <input type="file" name="NationalOrResidenceIdFile" class="form-control" />
                 <span asp-validation-for="Request.NationalOrResidenceIdFile" class="text-danger"></span>
             </div>
             <div class="form-group col">
                 <label asp-for="Request.CopyOfStudentId" class="control-label"></label>
-                <input type="file" name="StudentIdName" class="form-control" />
+                <input type="file" name="CopyOfStudentId" class="form-control" />
                 <span asp-validation-for="Request.CopyOfStudentId" class="text-danger"></span>
             </div>
         </div>

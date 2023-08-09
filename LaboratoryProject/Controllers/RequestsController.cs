@@ -22,7 +22,7 @@ namespace LaboratoryProject.Controllers
         }
 
         // GET: Requests
-        public async Task<IActionResult> Index(string searchSelected, string searchString)
+        public async Task<IActionResult> Index(string searchSelected, string searchLabel)
         {
             // Filter data (search from college and student status database)
             if (_context.Request == null)
@@ -30,15 +30,15 @@ namespace LaboratoryProject.Controllers
                 return NotFound("Request Is Null");
             }
             var searchelement = from c in _context.Request select c;
-            if (!string.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchLabel))
             {
                 if (searchSelected == "College")
                 {
-                    searchelement = searchelement.Where(s => s.College.Contains(searchString));
+                    searchelement = searchelement.Where(s => s.College.Contains(searchLabel));
                 }
-                else if (searchString == "Status")
+                else if (searchSelected == "Student Status")
                 {
-                    searchelement = searchelement.Where(s => s.StudentsStatus.Contains(searchString));
+                    searchelement = searchelement.Where(s => s.StudentsStatus.Contains(searchLabel));
                 }
             }
             return View(await searchelement.ToListAsync());
@@ -152,6 +152,12 @@ namespace LaboratoryProject.Controllers
             }
             return View(requestVM);
         }
+
+        public IActionResult Message()
+        {
+            return View();
+        }
+
 
         // Export Data to Excel 
         [HttpGet]
