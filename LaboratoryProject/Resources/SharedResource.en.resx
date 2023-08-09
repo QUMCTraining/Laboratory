@@ -165,9 +165,6 @@
   <data name="In case the student id is not available, please attach a copy of Qassim University student file" xml:space="preserve">
     <value>In case the student id is not available, please attach a copy of Qassim University student file</value>
   </data>
-  <data name="Kindly select a suitable date and time for the needed tests" xml:space="preserve">
-    <value>Kindly select a suitable date and time for the needed tests</value>
-  </data>
   <data name="Lab is open from 8:00 AM till 1:00 PM" xml:space="preserve">
     <value>Lab is open from 8:00 AM till 1:00 PM</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="TestDate" xml:space="preserve">
     <value>Test Date</value>
+  </data>
+  <data name="TextKindlySelectSuitableDate" xml:space="preserve">
+    <value>Kindly select a suitable date and time for the needed tests</value>
   </data>
   <data name="UniversityNumber" xml:space="preserve">
     <value>UniversityNumber</value>

@@ -165,9 +165,6 @@
   <data name="In case the student id is not available, please attach a copy of Qassim University student file" xml:space="preserve">
     <value>في حالة بطاقة الطالب غير موجودة, الرجاء إدراج نسخة من ملف طالب جامعة القصيم.</value>
   </data>
-  <data name="Kindly select a suitable date and time for the needed tests" xml:space="preserve">
-    <value>الرجاء إختيار تاريخ الموعد المناسب</value>
-  </data>
   <data name="Lab is open from 8:00 AM till 1:00 PM" xml:space="preserve">
     <value>المختبر مفتوح من الساعة 8:00 صباحًا حتى الساعة 1:00 مساءً</value>
   </data>
@@ -203,6 +200,9 @@
   </data>
   <data name="TestDate" xml:space="preserve">
     <value>يوم الموعد</value>
+  </data>
+  <data name="TextKindlySelectSuitableDate" xml:space="preserve">
+    <value>الرجاء إختيار تاريخ الموعد المناسب</value>
   </data>
   <data name="UniversityNumber" xml:space="preserve">
     <value>الرقم الجامعي</value>
