@@ -72,7 +72,7 @@ namespace LaboratoryProject.Controllers
             if (managment is null)
             {
                 ViewBag.ErrorMessage = "You need to set the limit in mangment page";
-                return View();
+                return View(requestVM);
             }
             var limitDays = managment.Value;
 
