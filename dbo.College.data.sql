@@ -1,0 +1,16 @@
+SET IDENTITY_INSERT [dbo].[College] ON
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (1, N'الطب البشري( المقر الرئيسي)')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (2, N'الطب والعلوم الطبية(القطاع الغربي)')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (3, N'طب الأسنان (القطاع الغربي)')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (4, N'طب الأسنان ( المقر الرئيسي)')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (5, N'الصيدلة (القطاع الرئيسي)')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (6, N'الصيدلة (القطاع الجنوبي)')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (7, N'العلوم الطبية التطبيقية')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (8, N'البصريات')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (9, N'التمريض')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (10, N'التاهيل الطبي')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (11, N'العلوم الصحية')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (12, N'الصحة العامة والمعلوماتية')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (13, N'كلية الزراعة')
+INSERT INTO [dbo].[College] ([Id], [Name]) VALUES (14, N'')
+SET IDENTITY_INSERT [dbo].[College] OFF
