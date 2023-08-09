@@ -13,10 +13,10 @@ namespace LaboratoryProject.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Index(string lang = "en")
+       
+        public IActionResult Index(string selectedLanguage = "en")
         {
-            if (lang == "en")
+            if (selectedLanguage == "en")
             {
                 Response.Cookies.Append(
                     CookieRequestCultureProvider.DefaultCookieName,

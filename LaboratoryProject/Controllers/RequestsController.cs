@@ -60,19 +60,13 @@ namespace LaboratoryProject.Controllers
 
             return View(request);
         }
-
-        // GET: Requests/Create
-        public IActionResult Create()
+        public List<DateTime>? GetAvilableDates()
         {
-            RequestVM requestVM = new RequestVM();
-            var colleges = _context.College.ToList();
-            requestVM.CollagesSelectList = new SelectList(colleges, "Name", "Name");
-
             var managment = _context.Management.Where(x => x.Name == "limitationDays").FirstOrDefault();
             if (managment is null)
             {
-                ViewBag.ErrorMessage = "You need to set the limit in mangment page";
-                return View(requestVM);
+               
+                return null;
             }
             var limitDays = managment.Value;
 
@@ -92,7 +86,24 @@ namespace LaboratoryProject.Controllers
                 }
                 avilableDates.Add(date);
             }
-            requestVM.AvilableDates = avilableDates;
+            return avilableDates;
+        }
+        // GET: Requests/Create
+        public IActionResult Create()
+        {
+            RequestVM requestVM = new RequestVM();
+            var colleges = _context.College.ToList();
+            requestVM.CollagesSelectList = new SelectList(colleges, "Name", "Name");
+            var avilableDates = GetAvilableDates();
+            if (avilableDates is null)
+            {
+               ViewBag.ErrorMessage = "You need to set the limit in mangment page";
+            }
+            else
+            {
+                requestVM.AvilableDates = avilableDates;    
+            }
+
             return View(requestVM);
 
         }
@@ -113,6 +124,12 @@ namespace LaboratoryProject.Controllers
             {
                 ViewBag.ErrorMessage = "You need to set limit in management page";
                 return View(requestVM);
+            }
+
+            var avilableDates= GetAvilableDates();  
+            if(avilableDates is not null) 
+            {
+                requestVM.AvilableDates= avilableDates;
             }
 
             var limitDays = management.Value;
