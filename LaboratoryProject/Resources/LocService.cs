@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Localization;
+using System.Globalization;
 using System.Reflection;
 
 namespace LaboratoryProject.Resources
@@ -6,6 +7,7 @@ namespace LaboratoryProject.Resources
     public class LocService
     {
         private readonly IStringLocalizer _localizer;
+       
         public LocService(IStringLocalizerFactory factory)
         {
             var type = typeof(SharedResource);

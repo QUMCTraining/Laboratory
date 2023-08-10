@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace LaboratoryProject.Controllers
 {
@@ -16,6 +17,8 @@ namespace LaboratoryProject.Controllers
        
         public IActionResult Index(string selectedLanguage = "en")
         {
+       
+
             if (selectedLanguage == "en")
             {
                 Response.Cookies.Append(
@@ -26,10 +29,12 @@ namespace LaboratoryProject.Controllers
             }
             else
             {
-                Response.Cookies.Append(
+                    
+                    Response.Cookies.Append(
+                    
                     CookieRequestCultureProvider.DefaultCookieName,
                     CookieRequestCultureProvider.MakeCookieValue(new RequestCulture("ar-SA")),
-                    new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
                 );
             }
             return View();
