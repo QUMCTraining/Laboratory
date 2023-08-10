@@ -133,28 +133,28 @@
     <value>البريد الإلكتروني</value>
   </data>
   <data name="FamilyNameArabic" xml:space="preserve">
-    <value>إسم العائلة | عربي</value>
+    <value>اسم العائلة | عربي</value>
   </data>
   <data name="FamilyNameEnglish" xml:space="preserve">
-    <value>إسم العائلة | انجليزي</value>
+    <value>اسم العائلة | انجليزي</value>
   </data>
   <data name="FatherNameArabic" xml:space="preserve">
-    <value>إسم الأب | عربي</value>
+    <value>اسم الأب | عربي</value>
   </data>
   <data name="FatherNameEnglish" xml:space="preserve">
-    <value>إسم الأب | انجليزي</value>
+    <value>اسم الأب | انجليزي</value>
   </data>
   <data name="FirstNameArabic" xml:space="preserve">
-    <value>الأسم الأول | عربي</value>
+    <value>الاسم الأول | عربي</value>
   </data>
   <data name="FirstNameEnglish" xml:space="preserve">
-    <value>الأسم الأول | انجليزي</value>
+    <value>الاسم الأول | انجليزي</value>
   </data>
   <data name="GrandFatherNameArabic" xml:space="preserve">
-    <value>إسم الجد | عربي</value>
+    <value>اسم الجد | عربي</value>
   </data>
   <data name="GrandFatherNameEnglish" xml:space="preserve">
-    <value>إسم الجد | انجليزي</value>
+    <value>اسم الجد | انجليزي</value>
   </data>
   <data name="I declare that the above-mentioned data is accurate and filled out by me personally" xml:space="preserve">
     <value>أقر بأن البيانات المذكورة أعلاه صحيحة وتم ملؤها شخصيًا</value>
@@ -205,7 +205,7 @@
     <value>يوم الموعد</value>
   </data>
   <data name="TextKindlySelectSuitableDate" xml:space="preserve">
-    <value>الرجاء إختيار تاريخ الموعد المناسب</value>
+    <value>الرجاء اختيار تاريخ الموعد المناسب</value>
   </data>
   <data name="ThanksToSubmit" xml:space="preserve">
     <value>شكرًا لك!</value>
